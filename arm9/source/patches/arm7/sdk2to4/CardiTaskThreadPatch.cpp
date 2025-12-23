@@ -173,7 +173,7 @@ void CardiTaskThreadPatch::ApplyPatch(PatchContext& patchContext)
             *(u16*)((u8*)_cardiTaskThread + patchOffset + 0x04) = THUMB_BX(THUMB_R1);
             *(u32*)((u8*)_cardiTaskThread + patchOffset + 0x08) = entryAddress;
         }
-        else if (patchContext.GetSdkVersion() >= 0x3027531)
+        else if (patchContext.GetSdkVersion() >= 0x3027530)
         {
             patchOffset = 0x98;
             entryAddress = (u32)&__patch_carditaskthread_entry - (u32)SECTION_START(patch_carditaskthread) + (u32)patch1Address;
