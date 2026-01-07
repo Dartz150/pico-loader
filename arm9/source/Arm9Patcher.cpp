@@ -287,6 +287,19 @@ void Arm9Patcher::AddGameSpecificPatches(
 {
     switch (gameCode)
     {
+        // Luminous Arc 2
+        case GAMECODE("YL2E"):
+        {
+            *(u32*)0x02066424 = 0x1A000003;
+        }
+        case GAMECODE("YL2P"):
+        {
+            *(u32*)0x02066350 = 0x1A000003;
+        }
+        case GAMECODE("YL2J"):
+        {
+            *(u32*)0x02065F10 = 0x1A000003;
+        }
         // Dragon Ball: Origins 2
         case GAMECODE("BDBE"):
         {
