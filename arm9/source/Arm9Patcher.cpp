@@ -290,7 +290,7 @@ void Arm9Patcher::AddGameSpecificPatches(
         // Luminous Arc 2
         case GAMECODE("YL2E"):
         {
-            *(u32*)0x02066424 = 0x1A000003;
+            *(u32*)0x0207AE38 = 0xE3A02080;
         }
         case GAMECODE("YL2P"):
         {
