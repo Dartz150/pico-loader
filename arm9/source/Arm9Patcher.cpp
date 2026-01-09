@@ -287,6 +287,15 @@ void Arm9Patcher::AddGameSpecificPatches(
 {
     switch (gameCode)
     {
+        // Castlevania: Portrait of Ruin (U)
+        case GAMECODE("ACBE"):
+        {
+            *(u32*)0x02007910 = 0xEB02508E;
+            *(u32*)0x02007918 = 0xEA000004;
+            *(u32*)0x02007A00 = 0xEB025052;
+            *(u32*)0x02007A04 = 0xE1500000;
+            break;
+        }
         // Luminous Arc 2
         case GAMECODE("YL2E"):
         {
