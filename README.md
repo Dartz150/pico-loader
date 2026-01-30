@@ -2,16 +2,16 @@
 Pico Loader is a homebrew and retail DS(i) rom loader supporting a variety of platforms (see below).
 
 ## Features
-- Supports both homebrew and retail DS(i) roms
-- Supports DSiWare and redirects NAND to the flashcard SD card (acting as "emunand", see below for how to setup)
-- Supports DS roms with an encrypted secure area if a DS arm7 bios is present at `/_pico/biosnds7.rom`
-- Supports a wide range of platforms, including popular flashcards and the DSpico
-- Built-in patches for DS Protect
-- Fast loading
+- Supports both homebrew and retail DS(i) roms.
+- Supports DSiWare and redirects NAND to the flashcard SD card (acting as "emunand", see below for how to setup) if a DS arm7 bios is present at `/_pico/biosnds7.rom`.
+- Supports DS roms with an encrypted secure area if a DS arm7 bios is present at `/_pico/biosnds7.rom`.
+- Supports a wide range of platforms, including popular flashcards and the DSpico.
+- Built-in patches for DS Protect.
+- Fast loading.
 
 Note that Pico Loader can currently not run retail roms from the DSi SD card. Homebrew is supported, however.
 
-Return to loader is also currently not supported yet.
+Return to loader is also currently not supported in retail games yet.
 
 ## Supported platforms
 
@@ -62,24 +62,13 @@ The steps provided will assume you already have one of those environments set up
     - `savelist.bin` (generated in the `data` folder of the repo)
 
 ## Emunand
-When running DSiWare, Pico Loader redirects NAND to the flashcard SD card. This requires the following files and folders, obtained from a DSi nand dump, in the root of your flashcard SD card:
+When running DSiWare and DSi system apps, Pico Loader redirects NAND to the flashcard SD card. This requires the following files and folders, obtained from a DSi/3DS nand and a DS (**not DSi**) ARM7 BIOS dump, in the root of your flashcard SD card:
+- `_pico`
+    - `biosnds7.rom`
 - `photo` - The photo partition of nand will be redirected to this folder
-- `shared1`
-    - `TWLCFG0.dat`
-    - `TWLCFG1.dat`
 - `shared2`
-    - `launcher`
-        - `wrap.bin`
+    - `0000`
 - `sys`
-    - `log`
-        - `product.log`
-        - `shop.log`
-        - `sysmenu.log`
-    - `cert.sys`
-    - `dev.kp`
-    - `HWID.sgn`
-    - `HWINFO_N.dat`
-    - `HWINFO_S.dat`
     - `TWLFontTable.dat`
 
 ## How to use Pico Loader from homebrew
