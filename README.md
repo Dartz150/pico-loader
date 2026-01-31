@@ -62,6 +62,7 @@ The steps provided will assume you already have one of those environments set up
     - `picoLoader9.bin` (the version for your platform)
     - `aplist.bin` (generated in the `data` folder of the repo)
     - `savelist.bin` (generated in the `data` folder of the repo)
+    - `patchlist.bin` (generated in the `data` folder of the repo)
 
 ## Emunand
 When running DSiWare and DSi system apps, Pico Loader redirects NAND to the flashcard SD card. This requires the following files and folders, obtained from a DSi/3DS nand, and a DS (**not DSi**) ARM7 BIOS dump, in the root of your flashcard SD card:
