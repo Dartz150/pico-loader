@@ -3,11 +3,13 @@ Pico Loader is a homebrew and retail DS(i) rom loader supporting a variety of pl
 
 ## Features
 - Supports both homebrew and retail DS(i) roms.
-- Supports DSiWare and redirects NAND to the flashcard SD card (acting as "emunand", see below for how to setup) if a DS arm7 bios is present at `/_pico/biosnds7.rom`.
-- Supports DS roms with an encrypted secure area if a DS arm7 bios is present at `/_pico/biosnds7.rom`.
+- Supports DSiWare and redirects NAND to the flashcard SD card (acting as "emunand", see below for how to setup).
+- Supports DS roms with an encrypted secure area.
 - Supports a wide range of platforms, including popular flashcards and the DSpico.
 - Built-in patches for DS Protect.
 - Fast loading.
+
+> **Note:** DSiware and DS roms with an encrypted secure area require a DS arm7 bios present at `/_pico/biosnds7.rom`.
 
 Note that Pico Loader can currently not run retail roms from the DSi SD card. Homebrew is supported, however.
 
@@ -62,10 +64,13 @@ The steps provided will assume you already have one of those environments set up
     - `savelist.bin` (generated in the `data` folder of the repo)
 
 ## Emunand
-When running DSiWare and DSi system apps, Pico Loader redirects NAND to the flashcard SD card. This requires the following files and folders, obtained from a DSi/3DS nand and a DS (**not DSi**) ARM7 BIOS dump, in the root of your flashcard SD card:
+When running DSiWare and DSi system apps, Pico Loader redirects NAND to the flashcard SD card. This requires the following files and folders, obtained from a DSi/3DS nand, and a DS (**not DSi**) ARM7 BIOS dump, in the root of your flashcard SD card:
 - `_pico`
     - `biosnds7.rom`
 - `photo` - The photo partition of nand will be redirected to this folder
+- `shared1`
+    - `TWLCFG0.dat`
+    - `TWLCFG1.dat`
 - `shared2`
     - `0000`
 - `sys`
