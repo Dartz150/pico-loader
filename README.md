@@ -9,7 +9,8 @@ Pico Loader is a homebrew and retail DS(i) rom loader supporting a variety of pl
 - Built-in patches for DS Protect.
 - Fast loading.
 
-> **Note:** DSiware and DS roms with an encrypted secure area require a DS arm7 bios present at `/_pico/biosnds7.rom`.
+> [!IMPORTANT]
+> DSiWare and encrypted DS roms require a DS arm7 bios present at `/_pico/biosnds7.rom`.
 
 Note that Pico Loader can currently not run retail roms from the DSi SD card. Homebrew is supported, however.
 
@@ -54,6 +55,17 @@ The steps provided will assume you already have one of those environments set up
 1. Install [BlocksDS](https://blocksds.skylyrac.net/docs/setup/)
 2. Install [.NET 9.0](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?tabs=dotnet9&pivots=os-linux-ubuntu-2404) for your system (note: this link points to the instructions for Ubuntu, but links for most OS'es are available on the same page)
 
+## Cloning
+This repository includes submodules. Make sure to clone it recursively:
+```
+git clone --recursive https://github.com/LNH-team/pico-loader.git
+```
+
+If you cloned without initializing submodules, run the following command:
+```
+git submodule update --init
+```
+
 ## Compiling
 1. Run `make`
     - By default this compiles for the DSpico platform. To specify a different platform use `make PICO_PLATFORM=PLATFORM`, for example `make PICO_PLATFORM=R4`. See the table above for the supported platforms.
@@ -70,8 +82,6 @@ When running DSiWare and DSi system apps, Pico Loader redirects NAND to the flas
     - `biosnds7.rom`
 - `photo` - The photo partition of nand will be redirected to this folder
 - `shared1`
-    - `TWLCFG0.dat`
-    - `TWLCFG1.dat`
 - `shared2`
     - `0000`
 - `sys`
