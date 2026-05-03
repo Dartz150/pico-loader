@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+### Added
+- DMA card read support for the M3DS platform - by @lifehackerhansol
+
+### Fixed
+- DMA card read offsets for Pokemon Ranger (EU) - by @taxicat1
+
 ## [v1.6.0] - 29 Mar 2026
 
 ### Added

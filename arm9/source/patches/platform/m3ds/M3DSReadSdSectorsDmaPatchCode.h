@@ -7,7 +7,6 @@ DEFINE_SECTION_SYMBOLS(m3ds_readsdsectorsdma);
 DEFINE_SECTION_SYMBOLS(m3ds_readsdsectorsdma_helper);
 
 extern "C" void m3ds_readSdSectorsDma(u32 srcSector, u32 previousSrcSector, u32 dmaChannel, void* dst);
-extern "C" void m3ds_finishReadSdSectorsDma(void);
 extern "C" void m3ds_readSdSectorsDma_applyCommand(void);
 extern "C" void m3ds_sdStopTransmission(void);
 
